@@ -1,42 +1,28 @@
-function countdown() {
-    var seconds = document.getElementById("seconds").nodeValue;
-
-    function tick() {
-        seconds = seconds - 1;
-        timer.innerHTML = seconds;
-        setTimeout(tick, 1000);
-    if(seconds == -1) {
-        alert("time's up!");
-    }
-        }
-    tick();
-}
-
-var slideindex = 1;
-showslides(slideindex);
+var slideIndex = 1;
+showSlides(slideIndex);
 
 //next/previous controls
-function plusslide(n) {
-    showslides(slideindex += n);
+function plusSlides(n) {
+    showSlides(slideIndex += n);
 }
 
 //thumbnail image controls
-function currentslide(n); {
-    showslides(slideindex = n);
+function currentSlide(n) {
+    showSlides(slideIndex = n);
 }
 
-function showslides(n) {
+function showSlides(n) {
     var i;
-    var slides = document.getElementsByClassName("myslides");
+    var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideindex = 1}
-    if (n < 1) {slideindex = slides.length}
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {
-        slides[i].getElementsByClassName.display = "none";
+        slides[i].style.display = "none";
     }
     for (i = 0; i < dots.length; i++) {
-        dots[i].classname = dots[i].classname.replace("active", "");
+        dots[i].className = dots[i].className.replace(" active ", "");
     }
-    slides[slidesindex-1].getElementsByClassName.display = "block";
-    dots[slideindex-1].classname += "active";
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += "active";
 }
