@@ -32,7 +32,7 @@ function showslides(n) {
     if (n > slides.length) {slideindex = 1}
     if (n < 1) {slideindex = slides.length}
     for (i = 0; i < slides.length; i++) {
-        slides[1].getElementsByClassName.display = "none";
+        slides[i].getElementsByClassName.display = "none";
     }
     for (i = 0; i < dots.length; i++) {
         dots[i].classname = dots[i].classname.replace("active", "");
