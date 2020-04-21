@@ -2,9 +2,9 @@
 <html lang="en">
     <head>
         <title>HTML & CSS Basic Course</title>
-        <META http-equiv="Content-Type" Content="text/html; charset=UTF-8">
+        <META http-equiv="Content-Type" Content="text/html" charset="UTF-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <link rel="stylesheet" href="./css/game.css">
+        <link rel="stylesheet" href="css/game.css">
         <style></style>
     </head>
     <body id="body">
@@ -30,10 +30,11 @@
             <div class="console_Left">
                 <div class="displayBox boxLeft">
                     <Strong>Current Config:</Strong><br><br>
-                    <label>Player 1: &nbsp&nbsp<span id="p1Display">O</span></label>
-                    <label>Player 2: &nbsp&nbsp<span id="p2Display">X</span></label>
+                    <label>Player 1: &nbsp;&nbsp;<span id="p1Display">O</span></label>
+                    <label>Player 2: &nbsp;&nbsp;<span id="p2Display">X</span></label>
                 </div>
                 <div class=""><button id="btnStart" onclick="startGame()">Start Game</button></div>
+                <div id="boardState"></div>
                 <div id="controls">
                     <div id="messageFrame">
                         <p id="showHeader">Active Player:</p>
@@ -46,7 +47,7 @@
                 <tr>
                     <td>
                         <div class="photo-container">
-                            <dive id="square0" class="square" onclick="square1Animate()">
+                            <dive id="square0" class="square" onclick="square1Animate()" ondblclick="">
                                 <div class="O"></div>
                                 <div class="X"></div>
                             </dive>
@@ -54,7 +55,7 @@
                     </td>
                     <td>
                         <div class="photo-container">
-                            <div id="square1" class="square" onclick="square2Animate()">
+                            <div id="square1" class="square" onclick="square2Animate()" ondblclick="">
                                 <div class="O"></div>
                                 <div class="X"></div>
                             </div>
@@ -63,7 +64,7 @@
 
                     <td>
                         <div class="photo-container">
-                            <div id="square1" class="square" onclick="square3Animate()">
+                            <div id="square1" class="square" onclick="square3Animate()" ondblclick="">
                                 <div class="O"></div>
                                 <div class="X"></div>
                             </div>
@@ -72,7 +73,7 @@
 
                     <td>
                         <div class="photo-container">
-                            <div id="square1" class="square" onclick="square4Animate()">
+                            <div id="square1" class="square" onclick="square4Animate()" ondblclick="">
                                 <div class="O"></div>
                                 <div class="X"></div>
                             </div>
@@ -81,7 +82,7 @@
 
                     <td>
                         <div class="photo-container">
-                            <div id="square1" class="square" onclick="square5Animate()">
+                            <div id="square1" class="square" onclick="square5Animate()" ondblclick="">
                                 <div class="O"></div>
                                 <div class="X"></div>
                             </div>
@@ -90,7 +91,7 @@
 
                     <td>
                         <div class="photo-container">
-                            <div id="square1" class="square" onclick="square6Animate()">
+                            <div id="square1" class="square" onclick="square6Animate()" ondblclick="">
                                 <div class="O"></div>
                                 <div class="X"></div>
                             </div>
@@ -99,7 +100,7 @@
 
                     <td>
                         <div class="photo-container">
-                            <div id="square1" class="square" onclick="square7Animate()">
+                            <div id="square1" class="square" onclick="square7Animate()" ondblclick="">
                                 <div class="O"></div>
                                 <div class="X"></div>
                             </div>
@@ -108,7 +109,7 @@
 
                     <td>
                         <div class="photo-container">
-                            <div id="square1" class="square" onclick="square8Animate()">
+                            <div id="square1" class="square" onclick="square8Animate()" ondblclick="">
                                 <div class="O"></div>
                                 <div class="X"></div>
                             </div>
@@ -117,7 +118,7 @@
 
                     <td>
                         <div class="photo-container">
-                            <div id="square1" class="square" onclick="square9Animate()">
+                            <div id="square1" class="square" onclick="square9Animate()" ondblclick="">
                                 <div class="O"></div>
                                 <div class="X"></div>
                             </div>
@@ -148,7 +149,7 @@
            }
         </script>
 
-        <script src="./js/tictactoe.js"></script>
+        <script src="js/tictactoe.js"></script>
 
     </body>
 </html>
