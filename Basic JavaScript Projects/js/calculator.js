@@ -1,11 +1,11 @@
 // creates an object to keep track of values
-const calculator = {
+const Calculator = {
     //this is displays 0 on the screen
     Display_Value: '0',
     // this will hold the first operand for any expressions, we set it to null for now
-    First_operand: null,
+    First_Operand: null,
     // this checks whether or not the second operand has been input
-    Wait_SecondOperand: false,
+    Wait_Second_Operand: false,
     //this will hold the operator, we set it to null for now
     operator: null,
 };
@@ -45,7 +45,7 @@ function Handle_Operator(Next_Operator) {
     const Value_of_Input = parseFloat(Display_Value);
     //check if an operator already exist and if wait_second_operand is true,
     // then updates the operator and exist from the function
-    if (operator && Calculator.Wait_Second_Operand) {
+    if (operator && Calculator.Wait_Second_Operator) {
         Calculator.operator = Next_Operator;
         return;
     }
@@ -56,10 +56,13 @@ function Handle_Operator(Next_Operator) {
         // if operator already exist, properly lookup is preformed for the operator
         // in the perform_calculation object and the function that matches the
         // operator is excuted
-        const result = Perform_Calculation[operator] (Value_Now, Value_of_Input);
-
-        Calculator.Display_Value = string(result);
-        Calculator.First_Operand = result;
+        let result = Perform_Calculation[operator] (Value_Now, Value_of_Input);
+        //here we add a fixed amount of numbers after the decimal
+        result = Number(result).toFixed(9)
+        //this will remoce any trailing O's
+        result = (result * 1).toString()
+        Calculator.Display_Value = parseFloat(result);
+        Calculator.First_Operand = parseFloat(result);
     }
 
     Calculator.Wait_Second_Operand = true;
@@ -71,7 +74,7 @@ const Perform_Calculation = {
     '*': (First_Operand,Second_Operand) => First_Operand * Second_Operand,
     '+': (First_Operand, Second_Operand) => First_Operand + Second_Operand,
     '-': (First_Operand, Second_Operand) => First_Operand - Second_Operand,
-    '=': (First_Operand, Second_Operand) => First_Operand = Second_Operand,
+    '=': (First_Operand, Second_Operand) => Second_Operand
 };
 
 function Calculator_Reset() {
@@ -85,6 +88,8 @@ function Update_Display() {
     const display = document.querySelector('.calculator-screen');
     display.value = Calculator.Display_Value;
 }
+
+
 
 Update_Display();
 //this section monitors button clicks
