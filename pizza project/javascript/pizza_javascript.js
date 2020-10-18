@@ -7,7 +7,7 @@ function getReceipt() {
     var sizeArray = document.getElementsByClassName("size");
     for (var i = 0; i < sizeArray.length; i++) {
         if(sizeArray[i].checked) {
-            var selectedSize = sizeArray[i].Value;
+            var selectedSize = sizeArray[i].value;
             text1 = text1+selectedSize+"<br>";
         }
     }
@@ -24,34 +24,34 @@ function getReceipt() {
     }
     runningTotal = sizeTotal;
     console.log(selectedSize+" = $"+sizeTotal+".00");
-    console.log("size text1: "+runningTotal+".00");
+    console.log("size text1: "+text1);
     console.log("subtotal: $"+runningTotal+".00");
     // these variables will be passed on to each function
-    getMeat(runningTotal,text1);
+    getTopping(runningTotal,text1);
 };
 
-function getMeat(runningTotal,text1) {
-    var meatTotal = 0;
-    var selectedMeat = [];
-    var meatArray = document.getElementsByClassName("meats");
-    for (var j = 0; j < meatArray.length; j++) {
-        if (meatArray[j].checked) {
-            selectedMeat.push(meatArray[j].value);
-            console.log("selected meat item: ("+meatArray[j].value+")");
-            text1 = text1+meatArray[j].value+"<br>";
+function getTopping(runningTotal,text1) {
+    var toppingTotal = 0;
+    var selectedTopping = [];
+    var toppingArray = document.getElementsByClassName("toppings");
+    for (var j = 0; j < toppingArray.length; j++) {
+        if (toppingArray[j].checked) {
+            selectedTopping.push(toppingArray[j].value);
+            console.log("selected topping item: ("+toppingArray[j].value+")");
+            text1 = text1+toppingArray[j].value+"<br>";
         }
     }
-    var meatCount = selectedMeat.length;
-    if(meatCount > 1) {
-        meatTotal = (meatCount - 1);
+    var toppingCount = selectedTopping.length;
+    if(toppingCount > 1) {
+        toppingTotal = (toppingCount - 1);
     } else {
-        meatTotal = 0;
+        toppingTotal = 0;
     }
-    runningTotal = (runningTotal + meatTotal);
-    console.log("total selected meat items: "+meatCount);
-    console.log(meatCount+" meat - 1 free meat = "+"$"+meatTotal+".00");
-    console.log("meat text1: "+text1);
-    console.log("purchase Total: "+"$"+runningTotal+".00");
+    runningTotal = (runningTotal + toppingTotal);
+    console.log("total selected topping items: "+toppingCount);
+    console.log(toppingCount+" topping - 1 free topping = "+"$"+toppingTotal+".00");
+    console.log("topping text1: "+text1);
+    console.log("Purchase Total: "+"$"+runningTotal+".00");
     document.getElementById("showText").innerHTML=text1;
     document.getElementById("totalPrice").innerHTML = "</h3>Total: <strong>$"
         +runningTotal+".00"+"</strong></h3>";
