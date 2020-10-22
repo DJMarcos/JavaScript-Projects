@@ -45,7 +45,7 @@ function Handle_Operator(Next_Operator) {
     const Value_of_Input = parseFloat(Display_Value);
     //check if an operator already exist and if wait_second_operand is true,
     // then updates the operator and exist from the function
-    if (operator && Calculator.Wait_Second_Operator) {
+    if (operator && Calculator.Wait_Second_Operand) {
         Calculator.operator = Next_Operator;
         return;
     }
