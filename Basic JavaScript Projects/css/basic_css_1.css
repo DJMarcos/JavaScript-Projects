@@ -4,10 +4,14 @@ body {font-family: verdana, sans-serif; margin:0}
 img {vertical-align: middle;}
 
 /*slideshow conatiner */
-.slideshow-container {
+.Slideshow-container {
     max-width: 1000px;
     position: relative;
     margin: auto;
+}
+
+.mySlides {
+    display: none;
 }
 
 
@@ -30,12 +34,12 @@ img {vertical-align: middle;}
 /* Position the "next button" to the right */
 .next {
     right: 0;
-    border-radius: 2px 0 0 2px;
+    border-radius: 3px 0 0 2px;
 }
 
 /* on hover, add a black background color with a little bit see-throught */
 .prev:hover, .next:hover {
-    background-color: rgb(219, 78, 78);
+    background-color: rgb(21, 0, 107);
 }
 
 /* Csption text */
@@ -94,4 +98,9 @@ img {vertical-align: middle;}
 /* on smaller screens decrease text size */
 @media only screen and (max-width: 300px) {
     .prev, .next, .text {font-size: 11px}
+}
+
+.img {
+    width: 400;
+    height: 300;
 }
